@@ -4,11 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -38,7 +36,6 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun DefaultPreview() {
-    // 0x80A2CC
     Column {
         Row(
             modifier = Modifier
@@ -46,11 +43,11 @@ fun DefaultPreview() {
         ) {
             SingleNode(
                 color = Color(33, 33, 33),
-                nodeType = TimelineView.NodeType.FIRST,
+                nodeType = TimelineView.NodeType.MIDDLE,
                 nodeSize = 50f,
                 modifier = Modifier.padding(horizontal = 20.dp),
-                isChecked = false,
-                isDashed = true
+                isChecked = true,
+                isDashed = false
             )
             Image(
                 painterResource(R.drawable.one),
@@ -67,8 +64,8 @@ fun DefaultPreview() {
                 nodeType = TimelineView.NodeType.MIDDLE,
                 nodeSize = 50f,
                 modifier = Modifier.padding(horizontal = 20.dp),
-                isChecked = false,
-                isDashed = true
+                isChecked = true,
+                isDashed = false
             )
             Image(
                 painterResource(R.drawable.five),
@@ -86,7 +83,7 @@ fun DefaultPreview() {
                 nodeSize = 50f,
                 modifier = Modifier.padding(horizontal = 20.dp),
                 isChecked = false,
-                isDashed = true
+                isDashed = false
             )
             Image(
                 painterResource(R.drawable.two),
