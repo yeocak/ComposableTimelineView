@@ -48,31 +48,36 @@ internal object SingleNodeDrawings {
             var spaceBetween = width
             var singleLinePart = width * 3
 
-            topPoint = topPoint.plus(Offset(0f,spaceBetween))
-            bottomPoint = bottomPoint.minus(Offset(0f,spaceBetween))
+            topPoint = topPoint.plus(Offset(0f,spaceBetween / 2))
+            bottomPoint = bottomPoint.minus(Offset(0f,spaceBetween / 2))
 
-            val numberOfLines = (((bottomPoint.y - topPoint.y) - spaceBetween) / (singleLinePart + spaceBetween)).toInt()
-            val onePartHeight = (bottomPoint.y - topPoint.y) / numberOfLines
+            val numberOfDoubleLines = (((bottomPoint.y - topPoint.y) - singleLinePart) / (singleLinePart + spaceBetween)).toInt()
+            val onePartHeight = 4f*(bottomPoint.y - topPoint.y) / (4f * numberOfDoubleLines + 3)
 
             spaceBetween = onePartHeight / 4f
             singleLinePart = onePartHeight / 4f * 3f
 
-            //TODO
-            topPoint = Offset(centerX, 0f)
-            topPoint = topPoint.plus(Offset(0f,spaceBetween))
+            var currentTopPoint = topPoint.copy()
+            var currentBottomPoint = currentTopPoint.plus(Offset(0f, singleLinePart))
 
-            for(a in 0 until numberOfLines){
-                val newTopPoint = topPoint.plus(Offset(0f, a * (spaceBetween + singleLinePart)))
-                val newBottomPoint = newTopPoint.plus(Offset(0f, singleLinePart))
-
+            for(a in 0 until numberOfDoubleLines){
                 drawLine(
                     color,
-                    newTopPoint,
-                    newBottomPoint,
+                    currentTopPoint,
+                    currentBottomPoint,
                     strokeWidth = width
                 )
+
+                currentTopPoint = currentTopPoint.plus(Offset(0f,singleLinePart + spaceBetween))
+                currentBottomPoint = currentBottomPoint.plus(Offset(0f,singleLinePart + spaceBetween))
             }
 
+            drawLine(
+                color,
+                currentTopPoint,
+                currentBottomPoint,
+                strokeWidth = width
+            )
         } else {
             drawLine(
                 color,
