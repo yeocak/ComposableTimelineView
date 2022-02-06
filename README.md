@@ -12,16 +12,16 @@ NodeType.LAST  | ![](https://github.com/yeocak/ComposableTimelineView/blob/maste
 ------
 
 #### *You can:*
-- Select any color
-- Select and change programmatically the nodeType
-- Change the size of middle circle via nodeSİze
-- Override the Modifier of SingleNode
-- Fill the inside of circle via isChecked
-- Change the dashed state via isDashed
+- select any color
+- select and change programmatically the nodeType
+- change the size of middle circle via nodeSİze
+- override the Modifier of SingleNode
+- fill the inside of circle via isChecked
+- change the dashed state via isDashed
 
 ------
 
-#### *Example Usage*:
+#### *Example Usage:*
 ```kotlin
 TimelineView.SingleNode(color = Color(33, 33, 33),
 			nodeType = TimelineView.NodeType.FIRST,
@@ -29,4 +29,23 @@ TimelineView.SingleNode(color = Color(33, 33, 33),
 			modifier = Modifier.padding(horizontal = 20.dp),
 			isChecked = false,
 			isDashed = true)
+```
+-------------
+
+#### *How to add to my project:*
+Add it in your root build.gradle at the end of repositories:
+```
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+
+Add the dependency in app.gradle:
+```
+dependencies {
+	implementation 'com.github.yeocak:ComposableTimelineView:0.6'
+}
 ```
