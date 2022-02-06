@@ -1,13 +1,13 @@
 # Jetpack Compose Timeline View
 
-![](https://raw.githubusercontent.com/yeocak/ComposableTimelineView/master/forgithub/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202022-02-05%2020-50-40.png)
+![](https://github.com/yeocak/ComposableTimelineView/blob/master/forgithub/main.png)
 
 nodeType/isDashed  |  True | False
 ------------- | ------------- | -------------
-NodeType.FIRST  | Content Cell  | Content Cell
-NodeType.MIDDLE  | Content Cell  | Content Cell
-NodeType.SPACER  | Content Cell  | Content Cell
-NodeType.LAST  | Content Cell  | Content Cell
+NodeType.FIRST  | ![](https://github.com/yeocak/ComposableTimelineView/blob/master/forgithub/yf.png)  | ![](https://github.com/yeocak/ComposableTimelineView/blob/master/forgithub/nf.png)
+NodeType.MIDDLE  | ![](https://github.com/yeocak/ComposableTimelineView/blob/master/forgithub/ym.png)  | ![](https://github.com/yeocak/ComposableTimelineView/blob/master/forgithub/nm.png)
+NodeType.SPACER  | ![](https://github.com/yeocak/ComposableTimelineView/blob/master/forgithub/ys.png)  | ![](https://github.com/yeocak/ComposableTimelineView/blob/master/forgithub/ns.png)
+NodeType.LAST  | ![](https://github.com/yeocak/ComposableTimelineView/blob/master/forgithub/yl.png)  | ![](https://github.com/yeocak/ComposableTimelineView/blob/master/forgithub/nl.png)
 
 ------
 
@@ -21,12 +21,12 @@ NodeType.LAST  | Content Cell  | Content Cell
 
 ------
 
-####Example Usage:
+#### *Example Usage*:
 ```kotlin
 TimelineView.SingleNode(color = Color(33, 33, 33),
-					nodeType = TimelineView.NodeType.FIRST,
-					nodeSize = 50f,
-					modifier = Modifier.padding(horizontal = 20.dp),
-					isChecked = false,
-					isDashed = true)
+			nodeType = TimelineView.NodeType.FIRST,
+			nodeSize = 50f,
+			modifier = Modifier.padding(horizontal = 20.dp),
+			isChecked = false,
+			isDashed = true)
 ```
